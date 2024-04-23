@@ -30,18 +30,14 @@ function PrimeNumbersInput() {
 
     const getHistoric = async () => {
         const historico = await fetchHistoric();
-        console.log(historico)
         setHistoricData(historico);
     };
 
     const getPrimeNumbersAndCalculatePerformance = async () => {
-        console.log("antes do if input valid")
         if (isInputValid()) {
-            console.log("dentro do if input valid")
-
             const start = performance.now();
-            const r = await fetchData();
-            setAnswer(`A quantidade de números primos até ${inputValue} é ${r}. `);
+            const response = await fetchData();
+            setAnswer(`A quantidade de números primos até ${inputValue} é ${response}. `);
             const timeTaken = (performance.now() - start) / 1000;
             setTime('Tempo para execução ' + timeTaken.toFixed(2) + ' segundos.');
             setHistoricData('')
@@ -49,7 +45,6 @@ function PrimeNumbersInput() {
     };
 
     let isInputValid = () => {
-        console.log(inputValue)
         if (!inputValue) {
             setAnswer('Insira um número positivo.');
             setInputValue('');
