@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import HistoricoPrimos from './components/HistoricoPrimos';
+import PrimesHitoric from './components/PrimesHitoric.js';
 import './styles/PrimeNumbersInput.css';
 
 function PrimeNumbersInput() {
     const [inputValue, setInputValue] = useState('');
     const [answer, setAnswer] = useState('');
     const [time, setTime] = useState('');
-    const [historicData, setHistoricData] = useState([]);
+    const [historicData, setHistoricData] = useState('');
 
     const handleInputChange = (event) => {
         setInputValue(event.target.value);
@@ -30,26 +30,47 @@ function PrimeNumbersInput() {
 
     const getHistoric = async () => {
         const historico = await fetchHistoric();
+        console.log(historico)
         setHistoricData(historico);
     };
 
     const getPrimeNumbersAndCalculatePerformance = async () => {
-        console.log(isNegativeNumber())
-        if (isNegativeNumber()) {
-            setAnswer('Insira um número positivo.');
-            setInputValue('');
-            setTime('');
-        } else {
+        console.log("antes do if input valid")
+        if (isInputValid()) {
+            console.log("dentro do if input valid")
+
             const start = performance.now();
             const r = await fetchData();
             setAnswer(`A quantidade de números primos até ${inputValue} é ${r}. `);
             const timeTaken = (performance.now() - start) / 1000;
             setTime('Tempo para execução ' + timeTaken.toFixed(2) + ' segundos.');
+            setHistoricData('')
         }
     };
 
+    let isInputValid = () => {
+        console.log(inputValue)
+        if (!inputValue) {
+            setAnswer('Insira um número positivo.');
+            setInputValue('');
+            setTime('');
+            setHistoricData('')
+            return false
+        }
+
+        if (isNegativeNumber()) {
+            setAnswer('Insira um número positivo.');
+            setInputValue('');
+            setTime('');
+            setHistoricData('')
+            return false
+        } 
+
+        return true
+    }
+
     let isNegativeNumber = () => {
-        return inputValue < 0 ? true : false;
+        return inputValue < 0;
     };
     
     return (
@@ -72,10 +93,9 @@ function PrimeNumbersInput() {
                 <p className='text'>{answer}</p>
                 <p className='text'>{time}</p>
             </div>
-            {historicData && <HistoricoPrimos historico={historicData} />}
+            {historicData && <PrimesHitoric historico={historicData} />}
         </div>
     );
 }
 
 export default PrimeNumbersInput;
-

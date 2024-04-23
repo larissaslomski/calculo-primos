@@ -1,0 +1,14 @@
+
+.historic-container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    height: 225px;
+    overflow-y: scroll;
+}
+
+.historic-title {
+    text-align: center;
+    font-size: 30px;
+    font-family: Arial, sans-serif;
+}
