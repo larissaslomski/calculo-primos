@@ -34,3 +34,5 @@ no terminal:
 - no terminal executar: npm start
 ```
 
+## Comportamento do sistema:
+
