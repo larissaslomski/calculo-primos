@@ -1,28 +1,30 @@
-armazena_inputs_e_primos = {}
+number_by_primes_len = {}
 
 def find_primes_by_integer(number):
-    teste = []
+    primes_by_integer = []
     integer_number = int(number)
-    numeros_primos = []
-    for numero_atual in range(2, integer_number):
-        if is_prime(numero_atual):
-            numeros_primos.append(numero_atual)
-    teste.append(len(numeros_primos))
+    prime_numbers = []
+    if integer_number == 0 or integer_number == 1 or integer_number == 2:
+        primes_by_integer.append(0)
+    else:
+        for current_integer_number in range(3, integer_number, 2):
+            if is_prime(current_integer_number):
+                prime_numbers.append(current_integer_number)
+        primes_by_integer.append(len(prime_numbers) + 1)
 
-    armazena_inputs_e_primos.setdefault(integer_number, len(numeros_primos))
-    return teste
+    number_by_primes_len.setdefault(integer_number, len(primes_by_integer))
+    return primes_by_integer
 
 
-def is_prime(numero_atual):
-    divisor = 1
-    primos = 0
-    while divisor <= numero_atual:
-        if numero_atual % divisor == 0:
-            primos += 1
-        divisor += 1
-
-    if primos == 2:
+def is_prime(number):
+    divider = 1
+    number_divisions = 0
+    while divider <= number:
+        if number % divider == 0:
+            number_divisions += 1
+        divider += 1
+    if number_divisions == 2:
         return True
     return False
 
-find_primes_by_integer(25)
+find_primes_by_integer(10)
