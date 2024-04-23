@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import PrimeNumbersInput from './PrimeNumbersInput';
+import PrimeNumbersInput from './components/PrimeNumbersInput';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

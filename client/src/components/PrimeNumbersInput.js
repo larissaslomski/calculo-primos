@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import PrimesHitoric from './components/PrimesHitoric.js';
-import './styles/PrimeNumbersInput.css';
+import PrimesHitoric from './PrimesHitoric.js';
+import '../styles/PrimeNumbersInput.css';
 
 function PrimeNumbersInput() {
     const [inputValue, setInputValue] = useState('');
