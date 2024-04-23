@@ -1,10 +1,5 @@
-from flask import Flask
-
-app = Flask(__name__)
-
 armazena_inputs_e_primos = {}
 
-@app.route("/primes/<number>")
 def find_primes_by_integer(number):
     teste = []
     integer_number = int(number)
@@ -13,13 +8,9 @@ def find_primes_by_integer(number):
         if is_prime(numero_atual):
             numeros_primos.append(numero_atual)
     teste.append(len(numeros_primos))
-    armazena_inputs_e_primos.setdefault(number, len(numeros_primos))
+
+    armazena_inputs_e_primos.setdefault(integer_number, len(numeros_primos))
     return teste
-
-
-@app.route("/primes/historic")
-def get_historic():
-    return armazena_inputs_e_primos
 
 
 def is_prime(numero_atual):
@@ -34,6 +25,4 @@ def is_prime(numero_atual):
         return True
     return False
 
-
-if __name__ == "__main__":
-    app.run(debug=True)
+find_primes_by_integer(25)
