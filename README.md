@@ -11,7 +11,7 @@ resultado.
 - (1) Armazenar e apresentar o histórico dos números informados pelo usuário junto comseus respectivos resultados;
 - (2) Defina limites e validações para que a aplicação não apresente erros;
 ## Resolução
-Para a resolução deste desafio foi utilizado o Python para o back-end e o React para o Front-end. Foi utilizado o Flask para integração do back-end com o Front end.  
+Para a resolução deste desafio foi utilizado o Python para o back-end e o React para o Front-end. Foi utilizado o Flask para integração do back-end com o Front end. O node na versão v16.20.2, npm na versão 8.19.4 e Flask na versão 3.0.3
 
 Flask é um framework web em Python que é utilizado para criar aplicativos web e APIs. É usado para integrar o backend com o frontend, com ele é possível criar rotas para manipular solicitações HTTP, fornecer APIs para interação com o frontend, lidar com o armazenamento e a manipulação de dados, etc.  
 
@@ -22,29 +22,24 @@ O npm (Node Package Manager) permite instalar pacotes de código em aplicações
 Para rodar o projeto é necessário que em sua máquina esteja instalado o Python3.10, npm e Flask:
 ```
 sudo apt install python3.10
-npx install 
+sudo apt install nodejs npm
 pip3 install Flask
 ```
-
+# Para rodar localmente:
+- baixar o projeto em sua máquina, abrir em um interpretador de código e rodar os seguintes comandos no terminal:
 ## Back-end:
-
-Para rodar o localmente:
+ - A partir do diretório principal:
 ```
-- baixar o projeto em sua máquina abrir em um interpretador de ódigo
-no terminal:
-- cd flask-server
-- python3 server.py
+    cd flask-server
+    python3 controller.py
 ```
 
 ## Front-end:
-
-Para rodar o localmente:
-```
-Para rodar localmente:
-- baixar o projeto em sua máquina abrir em um interpretador de ódigo
-no terminal:
-- cd client
-- no terminal executar: npm start
+ - A partir do diretório principal:
+```l
+   cd client
+   npm install
+   npm start
 ```
 
 ## Comportamento do sistema:
