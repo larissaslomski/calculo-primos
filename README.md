@@ -1,4 +1,4 @@
-# Desafio Laboratório Bridge
+# Desafio Laboratório Bridge - Desenvolvimento Web
 ## Objetivo do desafio 
 - Criação de uma Aplicação Web, que permita que o usuário insira um número inteiro k e calcule o número de inteiros positivos primos n MENORES que k,
 - A aplicação deve possuir uma tela com um campo de texto que aceite apenas números inteiros e um botão;
